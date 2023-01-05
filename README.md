@@ -12,11 +12,11 @@
 ### Steps to run Code
 - Clone the repository.
 ```
-git clone https://github.com/Yoshinori-Asada/Lightweight-yolov7.git
+git clone https://github.com/Yoshinori-Asada/LightWeight-yolov7.git
 ```
 - Goto the cloned folder.
 ```
-cd Lightweight-yolov7
+cd LightWeight-yolov7
 ```
 - Create a virtual envirnoment (optional,but recommended)
 ```
