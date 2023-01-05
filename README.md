@@ -5,6 +5,9 @@
 - The original CBS module including ELAN module is replaced with the Ghost convolution
 - The CBAM attention module is added after the last GhostCBS module
 
+### References
+ - https://github.com/WongKinYiu/yolov7
+
 ### Steps to run Code
 - Clone the repository.
 ```
@@ -44,6 +47,3 @@ python train.py --workers 8 --device 0 --batch-size 32 --data data/coco.yaml --i
 # Inference
 python detect.py --weights weights/pytorch/yolov7_lw.pt  --conf 0.25 --img-size 640 --source inference/images/horses.jpg
 
-
-### References
- - https://github.com/WongKinYiu/yolov7
