@@ -1,0 +1,8 @@
+# Please insure that your custom_dataset are put in same parent dir with YOLOv7_DIR
+train: ./custom_dataset/images/train # train images
+val: ./custom_dataset/images/val # val images
+# test: ./custom_dataset/images/test # test images (optional)
+
+# Classes
+nc: 1  # number of classes
+names: ['apple'] # class names
