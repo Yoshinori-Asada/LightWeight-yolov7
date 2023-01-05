@@ -1,12 +1,13 @@
-# Lightweight-yolov7
+# LightWeight-yolov7
 
 ### Features
-- Small object detection layer is added
-- The original CBS module including ELAN module is replaced with the Ghost convolution
-- The CBAM attention module is added after the last GhostCBS module
+- Small object detection layer is added.
+- The original CBS module including ELAN module is replaced with the Ghost convolution.
+- The CBAM attention module is added after the last GhostCBS module.
 
 ### References
  - https://github.com/WongKinYiu/yolov7
+   Please visit the URL to download the weights.
 
 ### Steps to run Code
 - Clone the repository.
@@ -41,9 +42,15 @@ pip install -r requirements.txt
 ```
 - Run the code with mentioned command below.
 ```
-# training
-python train.py --workers 8 --device 0 --batch-size 32 --data data/coco.yaml --img 640 640 --cfg cfg/training/yolov7_lw.yaml --weights weights/pytorch/yolov7_lw.pt --name yolov7 --hyp data/hyp.scratch.p5.yaml
+# transfer learning
+python train.py --workers 8 --device 0 --batch-size 32 --data data/dataset.yaml --img 640 640 --cfg cfg/training/yolov7_lw.yaml --weights 'yolov7_training.pt' --name yolov7-custom --hyp data/hyp.scratch.custom.yaml
+
+# test
+python test.py --data data/coco.yaml --img 640 --batch 32 --conf 0.001 --iou 0.65 --device 0 --weights 'yolov7_lw.pt' --name yolov7_640_val
 
 # Inference
-python detect.py --weights weights/pytorch/yolov7_lw.pt  --conf 0.25 --img-size 640 --source inference/images/horses.jpg
+python detect.py --weights 'yolov7_lw.pt'  --conf 0.25 --img-size 640 --source inference/images/horses.jpg
+
+# Quantization
+Please check tutorial.ipynb file.
 
